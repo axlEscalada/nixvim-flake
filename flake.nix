@@ -19,6 +19,7 @@
   };
 
   outputs = {
+    self,
     nixpkgs,
     nixvim,
     flake-parts,
@@ -28,6 +29,13 @@
   } @ inputs:
     flake-parts.lib.mkFlake {inherit inputs;} {
       systems = ["aarch64-linux" "x86_64-linux" "aarch64-darwin" "x86_64-darwin"];
+
+      flake = {
+        # Configuration for a NixOS VM (running on my Mac)
+        nixosConfigurations.linux-builder =
+          self.nixos-flake.lib.mkLinuxSystem
+          ./systems/linux.nix;
+      };
 
       perSystem = {
         system,

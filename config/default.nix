@@ -56,7 +56,6 @@
     extraPackages = with pkgs; [
       # Formatters
       alejandra
-      asmfmt
       astyle
       black
       cmake-format
@@ -84,12 +83,9 @@
       vale
       yamllint
       # Debuggers / misc deps
-      asm-lsp
-      bashdb
       clang-tools
       delve
       fd
-      gdb
       go
       lldb_17
       llvmPackages_17.bintools-unwrapped
@@ -104,7 +100,6 @@
 
       python3
       ripgrep
-      rr
       tmux-sessionizer
       zig
     ];
