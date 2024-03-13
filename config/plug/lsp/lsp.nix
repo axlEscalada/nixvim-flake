@@ -5,6 +5,7 @@
       clangd.enable = true;
       cmake.enable = true;
       cssls.enable = true;
+      gleam.enable = true;
       gopls.enable = true;
       html.enable = true;
       jsonls.enable = true;
@@ -25,6 +26,7 @@
   extraPlugins = with pkgs.vimPlugins; [
     nvim-lspconfig
     typescript-tools-nvim
+    gleam-vim
   ];
   extraConfigLua = ''
       -- Extra nvim-lspconfig configuration
@@ -144,6 +146,13 @@
 
       -- golang lsp
       require("lspconfig").gopls.setup({
+      	on_attach = function()
+      		set_cmn_lsp_keybinds()
+      	end,
+      })
+
+      -- gleam lsp
+      require("lspconfig").gleam.setup({
       	on_attach = function()
       		set_cmn_lsp_keybinds()
       	end,
