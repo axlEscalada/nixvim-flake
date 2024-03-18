@@ -15,6 +15,9 @@
       smartindent = true;
       shiftwidth = 2;
 
+      # Enable copy to system clipboard
+      clipboard = "unnamedplus";
+
       # Enable smart indenting (see https://stackoverflow.com/questions/1204149/smart-wrap-in-vim)
       breakindent = true;
 
