@@ -19,7 +19,7 @@
         action = "find_files, {}";
         desc = "Find project files";
       };
-      "<leader>/" = {
+      ";r" = {
         action = "live_grep";
         desc = "Grep (root dir)";
       };
